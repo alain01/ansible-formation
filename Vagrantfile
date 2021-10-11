@@ -9,8 +9,7 @@ class VagrantPlugins::ProviderVirtualBox::Action::Network
   Vagrant.configure("2") do |config|
     [
       ["master.formation.lan", "1024", 'ubuntu/focal64' ],
-      ["srv01.formation.lan", "1024", 'debian/buster64' ],
-      ["srv02.formation.lan", "1024", 'centos/8' ],
+      ["srv01.formation.lan", "1024",  
     ].each do |vmname,mem,os|
       config.vm.define "#{vmname}" do |machine|
   
