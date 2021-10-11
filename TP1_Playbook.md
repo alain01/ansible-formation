@@ -56,3 +56,10 @@
 8) Déclencher le playbook à l'aide de la commande **ansible-playbook**, attention les actions nécessitent une élévation de privilège, donc à répercuter dans la commande dans un premier temps.
 
     > L'aide : ansible-playbook --help
+
+
+9) Modifier le comportement d'ansible pour utiliser le user ansible par défaut lors du déclenchement
+ 
+   > Avec ansible.cfg
+
+10) Commencer à structurer l'inventaire avec des groupes
