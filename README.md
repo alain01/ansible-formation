@@ -39,4 +39,6 @@ $ vagrant ssh master.formation.lan
 ```bash
 $ sudo apt update && sudo  apt install -y python3-pip
 $ pip3 install ansible
+$ . ~/.profile
+$ ansible --version
 ```
