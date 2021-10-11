@@ -129,3 +129,27 @@ $ ansible -i hosts -m ping all --private-key ~/.ssh/id_ed25519
 ```bash
 $ ansible -i hosts -m user -a "name=formation" all
 ```
+
+- Appel d'un module avec argument et élévation de privilèges:
+
+
+-K, --ask-become-pass
+                        ask for privilege escalation password
+  -b, --become          run operations with become (does not imply password prompting)
+
+
+```bash
+$ ansible -i hosts -m user -a "name=formation comment=formation" all --become --ask-become-pass
+```
+
+- Idempotence : état désiré
+
+```bash
+$ ansible -i hosts -m user -a "name=formation comment=formation state=absent" all -b -K
+```
+
+- Commandes one-shot
+
+```bash
+$ ansible -i hosts -a "free -m" all
+```
