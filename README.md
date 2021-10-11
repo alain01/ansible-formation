@@ -103,3 +103,29 @@ $ ansible-inventory -i /vagrant/hosts --list
 $ ansible-inventory -i /vagrant/hosts --list --yaml
 $ ansible-inventory -i /vagrant/hosts --graph
 ```
+
+## Ansible - mode Ad-Hoc
+
+- Commande : ansible et ansible-doc
+
+- Documentation et list des modules
+
+   ```bash
+   $ ansible-doc -l
+   $ ansible-doc ping
+   ```
+
+- Premier test avec le module ping :
+
+```bash
+$ ansible --help
+$ ansible -i hosts -m ping srv01
+$ ansible -i hosts -m ping
+$ ansible -i hosts -m ping all --private-key ~/.ssh/id_ed25519
+```
+
+- Appel d'un module avec arguments
+
+```bash
+$ ansible -i hosts -m user -a "name=formation" all
+```
