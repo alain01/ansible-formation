@@ -47,3 +47,31 @@ $ pip3 install ansible
 $ . ~/.profile
 $ ansible --version
 ```
+
+## Concepts et notion de base ansible 
+
+* Control/manager/management node :
+  - noeud disposant de ansible (binaire) et permettant de déployer
+  - accès ssh aux autres machines (bastions...)
+  - password ou clef ssh
+  - interpréteur Python
+  - sécurité importante
+  - VirtualEnv python pour déployer le binaire Ansible
+
+* Managed nodes :
+  - serveurs cibles
+  - permet la connexion ssh
+  - élévation de privilèges via le user ( SUDO => audit)
+  - interpréteur Python
+
+* Inventaire/Inventory :
+  - inventaires des machines (ip, dns)
+  - format ini (plat) ou format yaml
+     - et les variables, surcharge de variable (host_vars et group_vars)
+     - statique (fichiers) ou dynamique (api via script)
+  - utilisation de patterns possible (srv-prd-[0-15])
+         > Règles de nommage des hostname/DNS
+     - Groupes : 
+  	   * dans un inventaire les machines peuvent être regroupées (serveur web, databases...)
+  	   * possibilité de créer différents niveaux > arbre (parents/enfants)
+  	   * groupe racine = all
