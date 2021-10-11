@@ -90,3 +90,16 @@ $ ansible-config list
 
   > https://docs.ansible.com/ansible/latest/installation_guide/intro_configuration.html
   > https://github.com/ansible/ansible/blob/stable-2.11/examples/ansible.cfg
+
+
+## Inventaire - Inventory
+
+- FIchier plat ini ou yaml
+
+- commande : ansible-inventory
+
+```bash
+$ ansible-inventory -i /vagrant/hosts --list
+$ ansible-inventory -i /vagrant/hosts --list --yaml
+$ ansible-inventory -i /vagrant/hosts --graph
+```
