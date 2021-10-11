@@ -1,3 +1,6 @@
+[local]
 master ansible_connection=local
+
+[common]
 srv01  ansible_ssh_host=172.28.128.112
 srv02  ansible_ssh_host=172.28.128.113

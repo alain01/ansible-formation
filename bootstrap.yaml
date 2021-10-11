@@ -1,8 +1,9 @@
 ---
 # Déclaration du premier PLAY
 - name: PLAY boots
-  hosts: srv01
-
+  hosts: common
+  become: true
+  
   tasks:
 
     - name: BOOTSTRAP Test des prerequis ansible avec le module ping
@@ -31,7 +32,7 @@
     - name: Module copie pour générer un fichier et son contenu
       ansible.builtin.copy:
         dest: /etc/sudoers.d/ansible
-        content: 'ansible ALL=(ALL) ALL'
+        content: 'ansible ALL=(ALL) NOPASSWD: ALL'
         owner: root
         group: root
         mode: 0440
