@@ -169,11 +169,15 @@ $ ansible -i hosts -m shell -a date all
 
 
 > fichier déclenchant les actions à réaliser
+
 > sert à articuler l'inventory avec les rôles
-> peut inclure des tasks (actions)
-> peut inclure des variables (éviter autant que possible)
+
+> peut inclure des tasks (actions), des variables
+
 > peut faire tout ce que fait un rôle (globalement) 
+
 >  spécifier quel user et comment ?
+
 > spécifier besoin tel que élévation de privilèges
 
 
