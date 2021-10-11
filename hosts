@@ -1,6 +1,13 @@
 [local]
 master ansible_connection=local
 
-[common]
+[common:children]
+debian
+redhat
+
+
+[debian]
 srv01  ansible_ssh_host=172.28.128.112
+
+[redhat]
 srv02  ansible_ssh_host=172.28.128.113
