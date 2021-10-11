@@ -76,6 +76,10 @@ $ ansible --version
   	   * possibilité de créer différents niveaux > arbre (parents/enfants)
   	   * groupe racine = all
 
+* Module :
+  - Code python qui réalise une action ciblée sur une technologie (gestion des users, gestion de fichier, gestion de clés)
+  - Un module prend des option
+
 
 ## Configuration environnement ansible 
 
@@ -152,4 +156,5 @@ $ ansible -i hosts -m user -a "name=formation comment=formation state=absent" al
 
 ```bash
 $ ansible -i hosts -a "free -m" all
+$ ansible -i hosts -m shell -a date all
 ```
