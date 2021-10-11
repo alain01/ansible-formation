@@ -75,3 +75,18 @@ $ ansible --version
   	   * dans un inventaire les machines peuvent être regroupées (serveur web, databases...)
   	   * possibilité de créer différents niveaux > arbre (parents/enfants)
   	   * groupe racine = all
+
+
+## Configuration environnement ansible 
+
+> ansible-config
+
+```bash
+$ ansible-config view
+$ ansible-config list
+```
+
+- Fichiers de configuration ansible ou variable d'environnement
+
+  > https://docs.ansible.com/ansible/latest/installation_guide/intro_configuration.html
+  > https://github.com/ansible/ansible/blob/stable-2.11/examples/ansible.cfg
