@@ -43,7 +43,7 @@
 
 7) A l'aide du module **copy**, générer un nouveau fichier sur le node distant nommé **/etc/sudoers.d/ansible**. Paramètres :
     - destination : /etc/sudoers.d/ansible
-    - contenu : 'ansible ALL=(ALL:ALL) ALL'
+    - contenu : 'ansible ALL=(ALL) NOPASSWD:ALL'
     - backup
     - propriétaire : root
     - group : root
