@@ -110,6 +110,11 @@ $ ansible-inventory -i /vagrant/hosts --graph
 
 ## Ansible - mode Ad-Hoc
 
+> Mécanisme d'idempotence qui entre en jeux : 
+> On décrit un état désiré au travers et de ses options
+> Le code exécuté à distance, analyse et réalise l'action uniquement si nécessaire. 
+> Plusieurs status : CHANGED, SUCCESS, FAILED
+
 - Commande : ansible et ansible-doc
 
 - Documentation et list des modules
@@ -161,6 +166,42 @@ $ ansible -i hosts -m shell -a date all
 
 
 ## Playbook :
+
+
+> fichier déclenchant les actions à réaliser
+> sert à articuler l'inventory avec les rôles
+> peut inclure des tasks (actions)
+> peut inclure des variables (éviter autant que possible)
+> peut faire tout ce que fait un rôle (globalement) 
+>  spécifier quel user et comment ?
+> spécifier besoin tel que élévation de privilèges
+
+
+> Beaucoup d'options possibles au lancement
+
+  ```bash
+  $ ansible-playbook --help
+  ```
+
+  * -i : inventory
+  * -l : limit > spécifier un/des groupes ou serveurs ou patterns
+  * -u : user
+  * -b : become > sudo
+  * -k : password de ssh (à éviter)
+  * -K : password du sudo
+  * -C : check > dry run
+  * -D : diff > afficher les différences avant/après les tasks (actions)
+  * --ask-vault : prompt pour le password vault
+  * --syntax-check : vérfier la syntax
+  * --vault-password-file : passer le vault password par un fichier
+  * -e : surcharger n'importe quelle variable
+  * -f : nombre de parallélisation
+  * -t : filtrer sur les tags (--skip-tags)
+  * --flush-cache : éviter l'utilisation du cache
+  * --step : une tâche à la fois (confirmation via prompt)
+  * --start-at-task : commencer à une tâche spécifiquement
+  * --list-tags : lister tous les tags rencontrés
+  * --list-tasks : liste les tâches qui vont être exécutées
 
 ```bash
 $ ansible-playbook -i hosts --become premier-playbook.yaml
