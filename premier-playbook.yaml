@@ -1,0 +1,13 @@
+---
+- name: PLAY de demo premier playbook
+  hosts: srv01
+
+  tasks:
+
+    - name: Utilisation du module user
+      ansible.builtin.user:
+        name: james
+        shell: /bin/bash
+
+    - name: Utilisation d'un second module
+      ansible.builtin.shell: date

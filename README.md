@@ -78,7 +78,7 @@ $ ansible --version
 
 * Module :
   - Code python qui réalise une action ciblée sur une technologie (gestion des users, gestion de fichier, gestion de clés)
-  - Un module prend des option
+  - Un module prend des options/arguments/paramètres => /!\ certain arguments sont requis, d'autres ont des valeurs par défaut
 
 
 ## Configuration environnement ansible 
@@ -157,4 +157,11 @@ $ ansible -i hosts -m user -a "name=formation comment=formation state=absent" al
 ```bash
 $ ansible -i hosts -a "free -m" all
 $ ansible -i hosts -m shell -a date all
+```
+
+
+## Playbook :
+
+```bash
+$ ansible-playbook -i hosts --become premier-playbook.yaml
 ```
