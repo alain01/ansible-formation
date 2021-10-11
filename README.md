@@ -210,3 +210,8 @@ $ ansible -i hosts -m shell -a date all
 ```bash
 $ ansible-playbook -i hosts --become premier-playbook.yaml
 ```
+
+
+## Fonction/Plugins :
+
+> https://docs.ansible.com/ansible/latest/plugins/lookup.html

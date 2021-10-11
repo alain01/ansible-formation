@@ -63,3 +63,5 @@
    > Avec ansible.cfg
 
 10) Commencer à structurer l'inventaire avec des groupes
+
+11) On peut préciser l'élévation de privilège dans le playbook à divers endroits plutôt que le commande de déclenchement
