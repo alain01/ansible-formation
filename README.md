@@ -21,7 +21,12 @@ $ vagrant ssh master.formation.lan
 
 > https://www.ansible.com/
 
-- Doc : https://docs.ansible.com/ansible/latest/index.html
+- Doc : 
+  - https://docs.ansible.com/ansible/latest/index.html
+  - https://www.redhat.com/files/summit/session-assets/2017/S100812-miller.pdf
+  - http://people.redhat.com/mlessard/mtl/presentations/apr2018/AnsibleF5WorkshopVF.pdf
+  - https://ansible.github.io/workshops/decks/ansible_best_practices.pdf
+
 
 
 ## Installations
