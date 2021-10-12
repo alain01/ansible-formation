@@ -55,3 +55,36 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module
 
   - https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
 
+
+## Exercice 4
+
+**Utilisation d'une variable locale sous forme de dictionnaire, boucle loop sur module**
+
+- https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html
+
+- https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#iterating-over-a-dictionary
+
+> Dans le playbook : requirements.yml
+
+- Modifier la variables :
+
+   ```yaml
+   liste_user:
+     formation:
+       state: present
+       create_home: true
+       shell: /bin/bash
+       comment: User formation
+     dev01:
+       state: present
+       create_home: true
+       shell: /bin/bash
+     deploy01:
+       state: present
+  ```
+
+- Utiliser le module **user** pour traiter la variable *liste_user**
+  - Penser aux paramètres requis
+  - Penser aux filtres jinja pour des valeurs par défaut ou *omit*
+  - Utiliser un boucle loop pour traiter les éléments de la variable
+
