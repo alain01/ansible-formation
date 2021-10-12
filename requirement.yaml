@@ -25,6 +25,7 @@
         create_home: true
         shell: /bin/bash
         comment: User formation
+        password: formation12345
       dev01:
         state: present
         create_home: true
@@ -74,6 +75,8 @@
         # Utilisation d'un filter default avec omit pour ne pas traiter le parametre shell (/!\ les valeur par defaut prevues par le module sont conservées)
         shell: "{{ item.value.shell | default(omit) }}"
         comment: "{{ item.value.comment | default(omit) }}"
+        password: "{{ item.value.password | default(omit) | password_hash('sha512') }}"
       # Utilisation de la fonction loop pour traiter les éléments d'une liste
       loop: "{{ liste_user | dict2items}}"
       become: true
+      no_log: true
