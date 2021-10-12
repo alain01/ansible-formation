@@ -215,3 +215,18 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 ## Fonction/Plugins :
 
 > https://docs.ansible.com/ansible/latest/plugins/lookup.html
+
+
+## Variables - Specials Variables - Faits/Facts
+
+- Variables déclarées manuellement
+
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html
+
+- Magic vars : auto
+
+  > https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
+
+- Facts : variables/nodes récoltées automatiquement lors du déclenchement de la task module setup
+
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html#ansible-facts
