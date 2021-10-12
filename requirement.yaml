@@ -77,8 +77,8 @@
         shell: "{{ item.value.shell | default(omit) }}"
         comment: "{{ item.value.comment | default(omit) }}"
         password: "{{ item.value.password | password_hash('sha512','ndqui7Ywog6/hk') if (item.value.password is defined) else omit}}"
-        #update_password: "{{ password_strategie | default('on_create') }}"
+        update_password: "{{ password_strategie | default('on_create') }}"
       # Utilisation de la fonction loop pour traiter les éléments d'une liste
       loop: "{{ liste_user | dict2items}}"
       become: true
-      #no_log: true
+      no_log: true
