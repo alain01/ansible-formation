@@ -54,3 +54,4 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module
 > Il va falloir aborder la notion de loop (boucles)
 
   - https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
+
