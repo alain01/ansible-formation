@@ -87,3 +87,13 @@
       loop: "{{ liste_user | dict2items}}"
       become: true
       no_log: true
+
+    - name: "Ajout d'un fichier pour les users"
+      ansible.builtin.copy:
+        src: "./info.txt"
+        dest: "/home/{{ item.key }}"
+        owner: "{{ item.key }}"
+        group: "{{ item.key }}"
+        mode: "0640"
+      loop: "{{ liste_user | dict2items}}"
+      become: true
