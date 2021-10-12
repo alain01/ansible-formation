@@ -36,7 +36,7 @@
         create_home: true
         shell: /bin/bash
       deploy01:
-        state: present
+        state: absent
 
   tasks:
     # Exercice 1
@@ -83,6 +83,7 @@
         comment: "{{ item.value.comment | default(omit) }}"
         password: "{{ item.value.password | password_hash('sha512','ndqui7Ywog6/hk') if (item.value.password is defined) else omit}}"
         update_password: "{{ password_strategie | default('on_create') }}"
+        remove: yes
       # Utilisation de la fonction loop pour traiter les éléments d'une liste
       loop: "{{ liste_user | dict2items}}"
       become: true
@@ -97,3 +98,4 @@
         mode: "0640"
       loop: "{{ liste_user | dict2items}}"
       become: true
+      when: item.value.state == 'present'

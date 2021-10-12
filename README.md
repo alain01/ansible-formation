@@ -291,3 +291,8 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   $ ansible-vault --he
   $ ansible-vault view  requirement.yaml
   ```
+
+
+## Conditionnals
+
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html
