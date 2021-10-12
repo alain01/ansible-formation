@@ -241,3 +241,28 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 > https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
 
 > https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#iterating-over-a-dictionary
+
+
+## Gestion des données sensibles :
+
+- Ansible vault
+
+> https://docs.ansible.com/ansible/latest/user_guide/vault.html
+
+- Commande :
+
+  ```bash
+  $ ansible-vault --help
+  ```
+
+- Ex 1 :
+
+  - 1. Demande d'encryption d'une string (mot de passe)
+    
+      ```bash
+      $ ansible-vault encrypt_string 'formation123' --name 'password'
+      ```
+
+      - /!\ : le mot de passe demande sert à encrypter ET decrypter, il est saisi à la volée et non conservé !!!
+
+  - 2. Copie du retour de la commande dans le playbook

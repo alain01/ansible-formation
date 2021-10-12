@@ -25,7 +25,13 @@
         create_home: true
         shell: /bin/bash
         comment: User formation
-        password: formation123
+        password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          65303239653235393966366433623830643333306333626437333336343661346530323961333032
+          6166323935303962623636646134326665376130386338640a653239326364633663363632626238
+          36333831306162356133346663656134626665373362666634386634343161366437646262393362
+          3831356561333430350a653162656237366531326531343865313639623530373862396538393837
+          6134
       dev01:
         state: present
         create_home: true
@@ -65,7 +71,7 @@
     #  loop: "{{ liste_user }}"
     #  become: true
 
-    # Exercice 4
+    # Exercice 4 et 5
     - name: "Creation des utilisateurs"  
       ansible.builtin.user:
         # Injection des éléments d'un dictionnaire : item.key et item.value
