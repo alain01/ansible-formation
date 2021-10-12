@@ -266,3 +266,9 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
       - /!\ : le mot de passe demande sert à encrypter ET decrypter, il est saisi à la volée et non conservé !!!
 
   - 2. Copie du retour de la commande dans le playbook
+
+  - 3. Déclenchement du playbook en ajout l'option **--ask-vault-password** et ainsi saisir le mot de passe vault pour décrypter
+
+     ```bash
+     $ ansible-playbook requirement.yaml --ask-vault-password
+     ```
