@@ -88,3 +88,6 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module
   - Penser aux filtres jinja pour des valeurs par défaut ou *omit*
   - Utiliser une boucle loop sur dictionnaire pour traiter les éléments de la variable
 
+## Exercice 5
+
+- Comment gérer les mots de passe

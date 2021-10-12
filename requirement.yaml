@@ -42,12 +42,12 @@
 
 
     # Exercice 3
-    - name: "Creation des utilisateurs"
-      ansible.builtin.user:
-        # Injection d'un élément : item de la variable liste_user
-        name: "{{ item }}"
-      # Utilisation de la fonction loop pour traiter les éléments d'une liste
-      loop: "{{ liste_user }}"
-      become: true
+    #- name: "Creation des utilisateurs"
+    #  ansible.builtin.user:
+    #    # Injection d'un élément : item de la variable liste_user
+    #    name: "{{ item }}"
+    #  # Utilisation de la fonction loop pour traiter les éléments d'une liste
+    #  loop: "{{ liste_user }}"
+    #  become: true
 
     # Exercice 4
