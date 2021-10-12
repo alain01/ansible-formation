@@ -37,6 +37,7 @@
         shell: /bin/bash
       deploy01:
         state: absent
+      deploy2:
 
   tasks:
     # Exercice 1
@@ -98,4 +99,4 @@
         mode: "0640"
       loop: "{{ liste_user | dict2items}}"
       become: true
-      when: item.value.state == 'present'
+      when: item.value.state is defined and item.value.state == 'present'
