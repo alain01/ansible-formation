@@ -66,10 +66,12 @@
     # Exercice 4
     - name: "Creation des utilisateurs"  
       ansible.builtin.user:
-        # Injection d'un élément : item de la variable liste_user
+        # Injection des éléments d'un dictionnaire : item.key et item.value
         name: "{{ item.key }}"
+        # Utilisation d'un filter pour positionner une valeur par defaut si item.value.state est vide
         state: "{{ item.value.state | default('absent') }}"
         create_home: "{{ item.value.create_home | default('yes') }}"
+        # Utilisation d'un filter default avec omit pour ne pas traiter le parametre shell (/!\ les valeur par defaut prevues par le module sont conservées)
         shell: "{{ item.value.shell | default(omit) }}"
         comment: "{{ item.value.comment | default(omit) }}"
       # Utilisation de la fonction loop pour traiter les éléments d'une liste
