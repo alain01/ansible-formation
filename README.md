@@ -248,6 +248,7 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 - Ansible vault
 
 > https://docs.ansible.com/ansible/latest/user_guide/vault.html
+> https://docs.ansible.com/ansible/latest/user_guide/vault.html#managing-vault-passwords
 
 - Commande :
 
@@ -255,7 +256,7 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   $ ansible-vault --help
   ```
 
-- Ex 1 :
+- Ex 1 méthode online :
 
   - 1. Demande d'encryption d'une string (mot de passe)
     
@@ -272,3 +273,9 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
      ```bash
      $ ansible-playbook requirement.yaml --ask-vault-password
      ```
+
+- Méthode fichier à plat : --vault-password-file
+
+- Méthode script avec outils tier pour aller cherche le mot de passe 
+
+   > https://github.com/alibaba/ansible-provider-docs/blob/master/contrib/vault/vault-keyring-client.py
