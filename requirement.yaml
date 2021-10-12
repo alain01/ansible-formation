@@ -1,0 +1,27 @@
+- name: PLAY requirements - variables et facts
+  hosts: common
+
+  vars:
+
+    liste_packages:
+      - vim
+      - nano
+      - curl
+      - tmux
+
+  tasks:
+
+    - name: "Utilisation des facts via module : debug"
+      ansible.builtin.debug:
+        #msg: "La distri est un {{ ansible_distribution }}"
+        #msg: "La distri est un {{ ansible_facts['distribution'] }}"
+        #msg: "Executable python : {{ ansible_facts['python']['executable'] }}"
+        #msg: "Executable python : {{ ansible_python.executable }}"
+        var: ansible_facts['python']
+
+
+    - name: "Installation de packages"
+      ansible.builtin.package:
+        name: "{{ liste_packages }}"
+        state: present
+      become: true
