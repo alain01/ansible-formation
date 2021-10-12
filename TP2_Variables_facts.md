@@ -34,3 +34,23 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module
 - Utiliser cette variable dans le module **package** comme valeur du parametre name. Cela permettra de demander l'installation des packages (éléments dans la liste sur les machines distantes). Penser au become pour élévation de privilèges
 
 
+
+## Exercice 3
+
+**Utilisation d’une variable locale de type liste**
+
+- Déclarer la variables :
+
+   ```yaml
+   liste_user:
+     - formation
+     - dev01
+     - deploy01
+    ```
+
+- Utiliser le module user pour créer les trois utilisateur
+    - /!\ cela devrait coincer
+
+> Il va falloir aborder la notion de loop (boucles)
+
+  - https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
