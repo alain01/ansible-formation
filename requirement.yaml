@@ -14,10 +14,23 @@
       - tmux
 
     # variable de type liste
+    #liste_user:
+    #  - formation
+    #  - dev01
+    #  - deploy01
+
     liste_user:
-      - formation
-      - dev01
-      - deploy01
+      formation:
+        state: present
+        create_home: true
+        shell: /bin/bash
+        comment: User formation
+      dev01:
+        state: present
+        create_home: true
+        shell: /bin/bash
+      deploy01:
+        state: present
 
   tasks:
     # Exercice 1
@@ -51,3 +64,14 @@
     #  become: true
 
     # Exercice 4
+    - name: "Creation des utilisateurs"  
+      ansible.builtin.user:
+        # Injection d'un élément : item de la variable liste_user
+        name: "{{ item.key }}"
+        state: "{{ item.value.state | default('absent') }}"
+        create_home: "{{ item.value.create_home | default('yes') }}"
+        shell: "{{ item.value.shell | default(omit) }}"
+        comment: "{{ item.value.comment | default(omit) }}"
+      # Utilisation de la fonction loop pour traiter les éléments d'une liste
+      loop: "{{ liste_user | dict2items}}"
+      become: true
