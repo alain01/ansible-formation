@@ -279,3 +279,15 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 - Méthode script avec outils tier pour aller cherche le mot de passe 
 
    > https://github.com/alibaba/ansible-provider-docs/blob/master/contrib/vault/vault-keyring-client.py
+
+
+- Commandes sur fichier :
+
+   ```bash
+  $ ansible-vault encrypt requirement.yaml
+  $ ansible-vault decrypt requirement.yaml
+  $ ansible-vault encrypt requirement.yaml
+  $ ansible-vault edit requirement.yaml 
+  $ ansible-vault --he
+  $ ansible-vault view  requirement.yaml
+  ```
