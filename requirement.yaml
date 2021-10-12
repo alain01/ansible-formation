@@ -89,6 +89,12 @@
       loop: "{{ liste_user | dict2items}}"
       become: true
       no_log: true
+      # Utilisation register : on stocke l'output d'un module dans une variable pour utilisation future
+      register: user_result
+
+    - name: "Analyse du register user_result via debug"
+      ansible.builtin.debug:
+        var: user_result
 
     - name: "Ajout d'un fichier pour les users"
       ansible.builtin.copy:
