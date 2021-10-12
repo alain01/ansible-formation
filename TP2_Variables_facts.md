@@ -84,7 +84,7 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module
   ```
 
 - Utiliser le module **user** pour traiter la variable *liste_user**
-  - Penser aux paramètres requis
+  - Penser aux paramètres requis et aux paramètres nécessaire (shell, comment)
   - Penser aux filtres jinja pour des valeurs par défaut ou *omit*
-  - Utiliser un boucle loop pour traiter les éléments de la variable
+  - Utiliser une boucle loop sur dictionnaire pour traiter les éléments de la variable
 

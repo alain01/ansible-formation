@@ -9,15 +9,22 @@
       - curl
       - tmux
 
+    liste_user:
+      - formation
+      - dev01
+      - deploy01
+
   tasks:
 
     - name: "Utilisation des facts via module : debug"
       ansible.builtin.debug:
         #msg: "La distri est un {{ ansible_distribution }}"
-        #msg: "La distri est un {{ ansible_facts['distribution'] }}"
-        #msg: "Executable python : {{ ansible_facts['python']['executable'] }}"
+        msg: 
+          - "La distri est un {{ ansible_facts['distribution'] }}"
+          - "La version majeure est : {{ ansible_facts['distribution_major_version'] }}"
+          - "Executable python : {{ ansible_facts['python']['executable'] }}"
         #msg: "Executable python : {{ ansible_python.executable }}"
-        var: ansible_facts['python']
+        #var: ansible_facts['python']
 
 
     - name: "Installation de packages"
@@ -25,3 +32,7 @@
         name: "{{ liste_packages }}"
         state: present
       become: true
+
+    - name: "Creation des utilisateurs"
+      ansible.builtin.user:
+        name: "{{ liste_user }}"

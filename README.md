@@ -230,3 +230,14 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 - Facts : variables/nodes récoltées automatiquement lors du déclenchement de la task module setup
 
   > https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html#ansible-facts
+
+
+## Boucles - loop - with_item
+
+- Itération sur des structures de données type liste et dictionnaire.
+- Permet de ne créer qu'une task dans le playbook et traiter plusieurs élements
+
+
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
+
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#iterating-over-a-dictionary
