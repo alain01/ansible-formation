@@ -94,7 +94,8 @@
 
     - name: "Analyse du register user_result via debug"
       ansible.builtin.debug:
-        var: user_result
+        var: user_result.results[item.key].home
+      loop: "{{ user_result.results }}"
 
     - name: "Ajout d'un fichier pour les users"
       ansible.builtin.copy:
@@ -103,6 +104,10 @@
         owner: "{{ item.key }}"
         group: "{{ item.key }}"
         mode: "0640"
-      loop: "{{ liste_user | dict2items}}"
+      loop:
+        - "{{ liste_user | dict2items}}"
       become: true
-      when: item.value.state is defined and item.value.state == 'present'
+      when: 
+        - item.value.state is defined
+        - item.value.state == 'present'
+       # - user_result.module_args.create_home
