@@ -25,7 +25,7 @@
         create_home: true
         shell: /bin/bash
         comment: User formation
-        password: formation12345
+        password: formation123
       dev01:
         state: present
         create_home: true
@@ -38,13 +38,14 @@
     - name: "Utilisation des facts via module : debug"
       ansible.builtin.debug:
         #msg: "La distri est un {{ ansible_distribution }}"
-        msg: 
-          - "La distri est un {{ ansible_facts['distribution'] }}"
-          - "La version majeure est : {{ ansible_facts['distribution_major_version'] }}"
-          - "Executable python : {{ ansible_facts['python']['executable'] }}"
+        #msg: 
+        #  - "La distri est un {{ ansible_facts['distribution'] }}"
+        #  - "La version majeure est : {{ ansible_facts['distribution_major_version'] }}"
+        #  - "Executable python : {{ ansible_facts['python']['executable'] }}"
         #msg: "Executable python : {{ ansible_python.executable }}"
         #var: ansible_facts['python']
-        verbosity: 2
+        var: liste_user
+        verbosity: 0
 
     # Exercice 2
     - name: "Installation de packages"
@@ -75,8 +76,9 @@
         # Utilisation d'un filter default avec omit pour ne pas traiter le parametre shell (/!\ les valeur par defaut prevues par le module sont conservées)
         shell: "{{ item.value.shell | default(omit) }}"
         comment: "{{ item.value.comment | default(omit) }}"
-        password: "{{ item.value.password | default(omit) | password_hash('sha512') }}"
+        password: "{{ item.value.password | password_hash('sha512','ndqui7Ywog6/hk') if (item.value.password is defined) else omit}}"
+        #update_password: "{{ password_strategie | default('on_create') }}"
       # Utilisation de la fonction loop pour traiter les éléments d'une liste
       loop: "{{ liste_user | dict2items}}"
       become: true
-      no_log: true
+      #no_log: true
