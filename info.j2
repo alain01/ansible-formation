@@ -1,3 +1,7 @@
+# Fichier manage par ansible
+# Ne pas modifier manuellement
+# Contact : it@masociete.fr
+
 Formation Ansible
 
 {# Commentaire jinja2 : Utilisation d'un fact #}
@@ -8,6 +12,6 @@ Fichier de config ansible utilisé : {{ ansible_config_file }}
 
 {# Appel d'une variable declaree dans le playbook et ajout d'une condition#}
 {% if environnement is defined %}
-    Environnement : {{ environnement }}
+Environnement : {{ environnement }}
 {% endif %}
 
