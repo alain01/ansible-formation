@@ -68,4 +68,8 @@
           include_tasks: "{{ ansible_facts['os_family'].yaml }}"
           ```
 
+       - Dans les répertoires defaults ou var : un main peut appeler d'autres fichiers yaml
 
+          ```yaml
+          include_vars: "{{ ansible_facts['os_family'].yaml }}"
+          ```
