@@ -355,3 +355,9 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 - Un rôle est par defaut autonome et a son propre cycle de vie (versionning)
 - organisé en différents outils (tasks, templates, handlers, variables (default ou non), meta)
 - sert à être partagé et réutilisé dans l'entreprise, dans le hub galaxy
+
+- Creation d'un skelete de role :
+
+  ```bash
+  $ ansible-galaxy init --init-path roles/ ansible_role_ssh
+  ```
