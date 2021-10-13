@@ -1,2 +1,5 @@
 ---
 # vars file for ansible_role_ssh
+debian_ssh_package: openssh-server
+redhat_ssh_package: openssh-server
+ssh_service: sshd

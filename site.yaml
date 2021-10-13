@@ -1,0 +1,6 @@
+---
+- name: PLAY site
+  hosts: common
+
+  roles:
+    - ansible_role_ssh

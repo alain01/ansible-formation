@@ -1,2 +1,27 @@
 ---
 # tasks file for ansible_role_ssh
+- name: Installation package ssh debian
+  ansible.builtin.apt:
+    name: "{{ debian_ssh_package }}"
+    state: 'present'
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Installation package ssh redhat
+  ansible.builtin.yum:
+    name: "{{ redhat_ssh_package }}"
+    state: 'present'
+  when: ansible_facts['os_family'] == "RedHat"
+
+- name: "Gestion du fichier de config"
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    backup: yes
+    validate: /usr/sbin/sshd -tf %s
+  when: custom_sshd is defined and custom_sshd
+  loop:
+    - { regexp: '^#?LogLevel .*', line: "LogLevel DEBUG" }
+    - { regexp: '^#?X11Forwarding .*', line: "X11Forwarding no" }
+  notify:
+    - restart sshd
