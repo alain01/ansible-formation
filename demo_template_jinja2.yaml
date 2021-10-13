@@ -1,7 +1,7 @@
 ---
 - name: PLAY demo template jinja2
   hosts: common
-  become: true
+  #become: true
 
   vars:
 
