@@ -317,3 +317,24 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   > https://docs.ansible.com/ansible/latest/user_guide/playbooks_templating.html
 
   > https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html
+
+
+## Syntax check et dry-run
+
+- Vérification syntaxe :
+
+   ```bash
+   $ ansible-playbook demo_template_jinja2.yaml --syntax-check
+   ```
+  
+- Mode dry-run, preview
+
+  ```bash
+  $ ansible-playbook demo_template_jinja2.yaml --check
+  ```
+
+- Mode dry-run + visu changements sur files ou templates
+
+  ``back
+  $ ansible-playbook demo_template_jinja2.yaml --check --diff
+  ```

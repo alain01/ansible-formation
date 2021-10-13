@@ -1,0 +1,17 @@
+---
+- name: PLAY demo template jinja2
+  hosts: common
+
+  vars:
+
+  tasks:
+    # Appeler le module template : ansible.builtin.template
+    # src: info.j2
+    #  dest: 
+    - name: Deploiement d'un template jinja2
+      ansible.builtin.template:
+        src: info.j2
+        dest: /tmp/info_srv
+        owner: root
+        group: root
+        mode: 0644
