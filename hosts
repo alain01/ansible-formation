@@ -10,4 +10,8 @@ redhat
 srv01  ansible_ssh_host=172.28.128.112
 
 [redhat]
-srv02  ansible_ssh_host=172.28.128.113
+srv02  ansible_ssh_host=172.28.128.113 environnement=INT
+
+
+[common:vars]
+environnement=PRD

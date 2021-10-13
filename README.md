@@ -232,6 +232,15 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   > https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html#ansible-facts
 
 
+- Precedence des variables 
+
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+
+  - Déclarer une même variable dans plusieurs fichiers ET avec des valeurs différentes
+  - Notion de poids : précedence/surcharge
+  - Adapter le code a des contextes différents simplement en redéclarant une variable à l'endroit désiré
+
+
 ## Boucles - loop - with_item
 
 - Itération sur des structures de données type liste et dictionnaire.
@@ -338,3 +347,5 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   ``back
   $ ansible-playbook demo_template_jinja2.yaml --check --diff
   ```
+
+

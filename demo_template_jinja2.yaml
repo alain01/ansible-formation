@@ -1,11 +1,10 @@
 ---
-- name: PLAY demo template jinja2
+- name: PLAY demo template jinja2 PRD
   hosts: common
   #become: true
 
   vars:
-
-    environnement: "int"
+    #environnement: "prd"
 
   tasks:
     # Appeler le module template : ansible.builtin.template
@@ -13,7 +12,7 @@
     #  dest: 
     - name: Deploiement d'un template jinja2
       ansible.builtin.template:
-        src: info.j2
+        src: "{{ environnement |lower }}_info.j2"
         dest: /tmp/info_srv
         owner: root
         group: root
