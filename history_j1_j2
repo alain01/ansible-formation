@@ -1,0 +1,245 @@
+    1  ls -ld /vagrant
+    2  cd /vagrant/
+    3  ls -l
+    4  ls -l test
+    5  ip a
+    6  sudo apt update
+    7  apt install ansible
+    8  sudo apt install ansible
+    9  apt list ansible
+   10  sudo pip3
+   11  sudo apt update && sudo  apt install -y python3-pip
+   12  clear
+   13  pip3 install ansible
+   14  ansible --version
+   15  . ~/.profile 
+   16  ansible --version
+   17  ip a
+   18  pig 172.28.128.112
+   19  ping 172.28.128.112
+   20  ping 172.28.128.113
+   21  ssh -i /vagrant/id_ed25519 vagrant@172.28.128.112
+   22  ls -l
+   23  cd /vagrant/
+   24  ls
+   25  ls -l
+   26  chmod 600 id_ed25519
+   27  ls -l
+   28  ip a
+   29  clear
+   30  ansible --version
+   31  ansible
+   32  clear
+   33  ansible-config --help
+   34  ansible-config view
+   35  ansible-config list
+   36  ansible-config --help
+   37  sudo touch /etc/ansible/ansible.cfg
+   38  sudo mkdir -p /etc/ansible
+   39  sudo touch /etc/ansible/ansible.cfg
+   40  ansible --version
+   41  ls -l /etc/ansible/ansible.cfg
+   42  touch ~/.ansible.cfg
+   43  ansible --version
+   44  pwd
+   45  ls -l
+   46  ansible --version
+   47  ansible-config list
+   48  pwd
+   49  ls -l
+   50  ansible --version
+   51  ansible-config view
+   52  ansible-inventory --help
+   53  ansible-inventory --list
+   54  ansible-inventory -i /vagrant/hosts --list
+   55  ansible-inventory -i /vagrant/hosts --list --yaml
+   56  ansible-inventory -i /vagrant/hosts --graph
+   57  ansible-doc
+   58  ansible-doc -l
+   59  ansible-doc ping
+   60  ansible -i hosts -m ping srv01
+   61  ansible-inventory -i /vagrant/hosts --graph
+   62  ansible -i hosts -m ping all
+   63  ansible -i hosts -m ping 
+   64  ansible --help
+   65  ansible -i hosts -m ping all --private-key /vagrant/id_ed25519
+   66  cp id_ed25519* ~/.ssh/
+   67  ansible -i hosts -m ping all --private-key ~/.ssh/id_ed25519
+   68  ls -l /home/vagrant/.ssh/id_ed25519
+   69  chmod 600 /home/vagrant/.ssh/id_ed25519*
+   70  clear
+   71  history
+   72  ansible -i hosts -m ping all
+   73  ansible -i hosts -m ping all --private-key ~/.ssh/id_ed25519
+   74  ls -l
+   75  chmod 600 id_ed25519
+   76  ls -l
+   77  ping 172.28.128.113
+   78  ansible-doc user
+   79  ansible -i hosts -m user all
+   80  ansible -i hosts -m user -a "name=formation"
+   81  ansible -i hosts -m user -a "name=formation" all
+   82  ansible -i hosts -m user -a "name=formation comment=formation" all
+   83  ansible --help
+   84  ansible -i hosts -m user -a "name=formation comment=formation" all --become --ask-become-pass
+   85  cd /vagrant/
+   86  ls -l
+   87  ansible -i hosts -m user -a "name=formation comment=formation" all
+   88  ansible -i hosts -m user -a "name=formation comment=formation state=absent" all
+   89  ansible -i hosts -m user -a "name=formation comment=formation state=absent" all -b -K
+   90  ansible -i hosts -m shell -a "command=date" al
+   91  ansible -i hosts -m shell -a "command=date" all
+   92  ansible -i hosts -m shell -a "command=echo $(date)" all
+   93  ansible -i hosts -m shell -a "command='echo $(date)'" all
+   94  ansible -i hosts -a "date" all
+   95  ansible -i hosts -a "free -m" all
+   96  ansible -i hosts -a "ls -l /etc/os-release" all
+   97  ansible -i hosts -m shell -a date
+   98  ansible -i hosts -m shell -a date all
+   99  ls -l ~/.ssh/
+  100  ansible -i hosts -m ping master
+  101  ansible -i hosts -m ping all
+  102  ansible-playbook --help
+  103  ansible-playbook -i hosts --become premier-playbook.yaml 
+  104  sudo cat /etc/passwd
+  105  sudo cat /etc/sudoers.d/vagrant
+  106  ansible-playbook -i hosts --become bootstrap.yaml 
+  107  ansible-playbook -i hosts --become bootstrap.yaml --start-at-task "Module copie pour générer un fichier et son contenu"
+  108  ansible-playbook -i hosts --become bootstrap.yaml --list-task
+  109  ansible-playbook -i hosts --become bootstrap.yaml --list-hosts
+  110  ansible -i hosts -m ping -u ansible srv01
+  111  ansible -i hosts -m pingsrv01
+  112  ansible -i hosts -m ping srv01
+  113  ansible -m ping srv01
+  114  ansible-inventory -i /vagrant/hosts --graph
+  115  ansible-inventory -i /vagrant/hosts --list
+  116  ansible-playbook bootstrap.yaml 
+  117  ansible-playbook bootstrap.yaml -u vagrant
+  118  ansible-playbook bootstrap.yaml
+  119  ansible-inventory -i /vagrant/hosts --graph
+  120  cd /vagrant/
+  121  ls -l
+  122  ansible -m ping debian
+  123  ansible -m ping common
+  124  ansible -m ping all
+  125  intpsa001
+  126  clear
+  127  ansible-playbook bootstrap.yaml 
+  128  ansible-playbook bootstrap.yaml -u vagrant
+  129  ansible-playbook bootstrap.yaml --syntax-check
+  130  ansible-playbook bootstrap.yaml -l srv01
+  131  ansible-playbook bootstrap.yaml -l all
+  132  ansible-playbook --help
+  133  ansible-playbook bootstrap.yaml -l redhat
+  134  ansible-playbook --help
+  135  clear
+  136  ansible-playbook premier-playbook.yaml 
+  137  ansible -m setup srv01 
+  138  ansible -m setup -i hosts all | grep "distribution"
+  139  ansible-playbook requirement.yaml 
+  140  ansible -m setup srv01 
+  141  ansible-playbook requirement.yaml 
+  142  ansible -m setup -i hosts all | grep "distribution"
+  143  ansible-playbook requirement.yaml 
+  144  ansible-playbook requirement.yaml --start-at-task "Creation des utilisateurs"
+  145  ansible-playbook --help
+  146  ansible-playbook requirement.yaml 
+  147  ansible-playbook requirement.yaml -v
+  148  ansible-playbook requirement.yaml 
+  149  ansible-playbook test.yaml 
+  150  ansible-playbook requirement.yaml 
+  151  ansible-playbook requirement.yaml -e "password=toto"
+  152  ansible-playbook requirement.yaml -e "upassword=toto"
+  153  ansible-playbook requirement.yaml --extra_vars "upassword=toto"
+  154  ansible-playbook requirement.yaml --extra-vars "upassword=toto"
+  155  ansible-playbook requirement.yaml 
+  156  ansible-playbook requirement.yaml --extra-vars "{"liste_user":{"formation":{"password":'formation12345'}}}"
+  157  ansible-playbook requirement.yaml 
+  158  ansible-playbook requirement.yaml --extra-vars "{
+    "liste_user": {
+        "deploy01": {
+            "state": "present"
+  159  ansible-playbook requirement.yaml --extra-vars "{"liste_user": {"formation": {"password: "plouf123"}}}" 
+  160  ansible-playbook requirement.yaml --extra-vars "{"liste_user": {"formation": {"password": "plouf123"}}}" 
+  161  clea
+  162  cldear
+  163  clear
+  164  ansible-playbook requirement.yaml
+  165  ansible-playbook requirement.yaml --extra-vars "{"liste_user": {"formation": {"password": "plouf123"}}}" clear
+  166  clear
+  167  ansible-vault --help
+  168  ansible-vault encrypt_string --help
+  169  ansible-vault encrypt_string 'formation123'
+  170  ansible-vault encrypt_string 'formation123' --name 'password'
+  171  ansible-playbook requirement.yaml
+  172  ansible-playbook --help
+  173  ansible-playbook requirement.yaml --ask-vault-password
+  174  ansible-playbook requirement.yaml --vault-password-file .vault_secret 
+  175  ansible-playbook requirement.yaml 
+  176  ansible-playbook requirement.yaml
+  177  ansible-vault encrypt --help
+  178  ansible-vault encrypt requirement.yaml 
+  179  ansible-vault decrypt requirement.yaml 
+  180  ansible-vault encrypt requirement.yaml 
+  181  ansible-vault edit requirement.yaml 
+  182* ansible-vault --he
+  183  ansible-vault view  requirement.yaml 
+  184  history
+  185  ansible-vault decrypt requirement.yaml 
+  186  ansible-playbook requirement.yaml
+  187  ansible-vault decrypt requirement.yaml 
+  188  ansible-playbook requirement.yaml
+  189  clear
+  190  ansible -m setup srv01
+  191  ansible -m setup srv01 | grep family
+  192  ansible -m setup srv02 | grep family
+  193  ansible-playbook manage_ssh.yaml 
+  194  sudo -i
+  195  ansible-playbook manage_ssh.yaml 
+  196  lxc launch ubuntu_ansible app1
+  197  lxd init
+  198  sudo lxc init
+  199  lxc launch ubuntu_ansible app1
+  200  sudo lxc launch ubuntu_ansible app1
+  201  clear
+  202  ansible-playbook requirement.yaml
+  203  clear
+  204  ansible-playbook requirement.yaml
+  205  ansible-playbook requirement.yaml --syntax-check
+  206  ansible-playbook requirement.yaml
+  207  clear
+  208  ansible-playbook demo_template_jinja2.yaml --syntax-check
+  209  ansible-playbook demo_template_jinja2.yaml
+  210  ansible-playbook demo_template_jinja2.yaml --check
+  211  ansible-playbook demo_template_jinja2.yaml --check --diff
+  212  ansible-playbook demo_template_jinja2.yaml --syntax-check
+  213  ansible-playbook demo_template_jinja2.yaml --check
+  214  ansible-playbook --help
+  215  ansible-playbook demo_template_jinja2.yaml --check --diff
+  216  ansible-playbook demo_template_jinja2.yaml --diff
+  217  ansible common -a "cat /tmp/info_srv"
+  218  ansible-playbook demo_template_jinja2.yaml
+  219  ansible common -a "cat /tmp/info_srv"
+  220  ansible-playbook demo_template_jinja2.yaml
+  221  ansible common -a "cat /tmp/info_srv"
+  222  ansible-playbook demo_template_jinja2.yaml
+  223  ansible srv01 -m shell -a "cat /tmp/info_srv"
+  224  ansible srv01 -m shell -a "ls -l /tmp/info_srv"
+  225  ansible common -m shell -a "ls -l /tmp/info_srv"
+  226  ansible common -a "ls -l /tmp/info_srv"
+  227  ansible common -m command -a "ls -l /tmp/info_srv"
+  228  ansible common -m shell  -a "ls -l /tmp/info_srv"
+  229  ansible common -m shell  -a "cat /tmp/info_srv"
+  230  ansible-playbook demo_template_jinja2.yaml
+  231  ansible common -m shell  -a "cat /tmp/info_srv"
+  232  ansible-playbook demo_template_jinja2.yaml
+  233  ansible common -m shell  -a "cat /tmp/info_srv"
+  234  ansible-playbook demo_template_jinja2.yaml
+  235  ansible common -m shell  -a "cat /tmp/info_srv"
+  236  ansible --help
+  237  ansible -u vagrant srv02 -m shell  -a "cat /tmp/info_srv"
+  238  ansible -u vagrant srv02 -m shell  -a "cat /tmp/info_srv" -k
+  239  ansible -u vagrant srv02 -m shell  -a "cat /tmp/info_srv"
+  240  clear
+  241  history
+  242  history > history_j1_j2

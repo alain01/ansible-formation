@@ -1,8 +1,11 @@
 ---
 - name: PLAY demo template jinja2
   hosts: common
+  become: true
 
   vars:
+
+    environnement: "integration"
 
   tasks:
     # Appeler le module template : ansible.builtin.template

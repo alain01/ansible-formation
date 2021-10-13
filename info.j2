@@ -1,3 +1,13 @@
 Formation Ansible
 
+{# Commentaire jinja2 : Utilisation d'un fact #}
 Serveur de type : {{ ansible_facts['distribution'] }}
+
+{# Utilisation d'une magic var #}
+Fichier de config ansible utilisé : {{ ansible_config_file }}
+
+{# Appel d'une variable declaree dans le playbook et ajout d'une condition#}
+{% if environnement is defined %}
+Environnement : {{ environnement }}
+{% endif %}
+
