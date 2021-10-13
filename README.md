@@ -349,3 +349,9 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   ```
 
 
+## ROLES
+
+- Ensemble d'actions coordonnées pour réaliser un ensemble cohérent (installer nginx et le configurer etc)
+- Un rôle est par defaut autonome et a son propre cycle de vie (versionning)
+- organisé en différents outils (tasks, templates, handlers, variables (default ou non), meta)
+- sert à être partagé et réutilisé dans l'entreprise, dans le hub galaxy
