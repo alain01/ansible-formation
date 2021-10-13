@@ -1,11 +1,24 @@
 ---
 - name: PLAY demo surcharge vars
   hosts: all
+  gather_facts: false
 
   vars:
     my_var: "plouf"
 
   tasks:
-    - name: traitement d'une variable
+
+    - name: traitement d'une variable declaree au niveau du PLAY dans le block vars
       ansible.builtin.debug:
         msg: "Pour le serveur {{ inventory_hostname }} la variable my_var est : {{ my_var }}"
+
+    - name: traitement d'une variable delcaree dans le task courante
+      ansible.builtin.debug:
+        msg: "Pour le serveur {{ inventory_hostname }} la variable my_var est : {{ my_var }}"
+      vars:
+        - my_var: "plaf"
+
+    - name: traitement d'une variable declaree au niveau du PLAY dans le block vars
+      ansible.builtin.debug:
+        msg: "Pour le serveur {{ inventory_hostname }} la variable my_var est : {{ my_var }}"
+    
