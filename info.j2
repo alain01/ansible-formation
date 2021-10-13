@@ -17,6 +17,9 @@ Fichier de config ansible utilisé : {{ ansible_config_file }}
 {{ 'Environnement :'|indent(4, True) }} {{ environnement |upper }}
 {% endif %}
 
-{# Parcourir un facts ansible_interface #}
+{# Parcourir un facts ansible_interface :  ansible -m setup srv01 #}
 {# Pour chaque element => for #}
-{# Affichier le nom de l'interface et son adresse #}
+{% for _interface in ansible_facts['interfaces'] %}
+{# Afficher le nom de l'interface et son adresse #}
+{{ _interface + ': ' +  ansible_facts[_interface]['ipv4']['address'] }}
+{% endfor %}
