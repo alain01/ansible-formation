@@ -98,7 +98,18 @@
         msg: 
           - " Create home : {{ item.invocation.module_args.create_home }}"
           - " Home dir : {{ item.home }}"
+          - "Name: {{ item.name }}"
       loop: "{{ user_result.results }}"
+      when: item.state == 'present'
+
+    - name: set fact
+      set_fact: ma_var="{{ item.home }}"
+      with_items: 
+        - "{{ user_result.results }}"
+
+    - name: debug
+      ansible.builtin.debug:
+        var: "{{ ma_var }}"
       when: item.state == 'present'
       
     - name: "Ajout d'un fichier pour les users"

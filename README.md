@@ -295,4 +295,25 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 
 ## Conditionnals
 
-> https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html
+- Déclencher une task sur condition
+
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html
+
+- Permet d'orienter le déroulement du play et des tasks
+
+## Handlers
+
+- Déclencher une task sur changement
+
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_handlers.html
+
+## Template Jinja
+
+- Gérer des fichiers dynamiques (avec variables)
+- Permet d'adapter le contenu d'un fichier par rapport à un contexte, des variables
+
+- CF : playbook demo_template_jinja2.yaml
+
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_templating.html
+
+  > https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html
