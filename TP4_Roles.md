@@ -50,6 +50,22 @@
 
 - 1. Creer un playbook de déploiement du rôle
 
+   - /!\ Si vous suivez l'exemple des modules, ce rôle ne peut être déclenché que sur du RedHat/Centos 
+   - Pensez dans le play à filtre le hosts sur srv02
+
 - 2. Déclencher !!!!
+
+
+## Améliorer le role pour qu'il puisse installer apache sur famille RedHat et Debian
+
+  - Penser à une nouvelle de faire :
+  
+    - include_tasks
+
+       - Dans le répertoire tasks : un main.yaml qui peut appeler d'autres fichiers yaml
+        
+          ```yaml
+          include_task: "{{ ansible_facts['os_family'].yaml }}"
+          ```
 
 
