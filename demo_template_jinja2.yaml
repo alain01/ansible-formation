@@ -5,7 +5,7 @@
 
   vars:
 
-    environnement: "integration"
+    environnement: "int"
 
   tasks:
     # Appeler le module template : ansible.builtin.template

@@ -13,7 +13,10 @@ Serveur de type : {{ ansible_facts['distribution'] }}
 Fichier de config ansible utilisé : {{ ansible_config_file }}
 
 {# Appel d'une variable declaree dans le playbook et ajout d'une condition#}
-{% if environnement is defined %}
-Environnement : {{ environnement }}
+{% if environnement is defined  and environnement |length > 2 %}
+{{ 'Environnement :'|indent(4, True) }} {{ environnement |upper }}
 {% endif %}
 
+{# Parcourir un facts ansible_interface #}
+{# Pour chaque element => for #}
+{# Affichier le nom de l'interface et son adresse #}
