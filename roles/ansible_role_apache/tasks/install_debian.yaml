@@ -1,0 +1,9 @@
+- name: Install apache package
+  ansible.builtin.apt:
+    name: "{{ package }}"
+    state: latest
+
+- name: Start apache service
+  ansible.builtin.service:
+    name: "{{ service }}"
+    state: started

@@ -1,2 +1,6 @@
 ---
 # handlers file for ansible_role_apache
+- name: restart apache
+  ansible.builtin.service:
+    name: "{{ service }}"
+    state: restarted

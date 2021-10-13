@@ -1,0 +1,7 @@
+- name: modifie le serveradmin
+  lineinfile:
+    path: /etc/apache2/sites-available/000-default.conf
+    regexp: '^ServerAdmin'
+    line: "ServerAdmin {{ admin }}"
+  notify:
+    - restart apache

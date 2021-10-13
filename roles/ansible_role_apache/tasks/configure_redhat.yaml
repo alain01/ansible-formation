@@ -1,0 +1,7 @@
+- name: modifie le serveradmin
+  lineinfile:
+    path: /etc/httpd/conf/httpd.conf
+    regexp: '^ServerAdmin'
+    line: "ServerAdmin {{ admin }}"
+  notify:
+    - restart apache
