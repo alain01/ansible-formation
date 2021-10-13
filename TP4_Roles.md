@@ -25,7 +25,7 @@
     lineinfile:
       path: /etc/httpd/conf/httpd.conf
       regexp: '^ServerAdmin'
-      line: "{{ admin }}"
+      line: "ServerAdmin {{ admin }}"
     notify:
       - redemarre apache
   handlers:
