@@ -65,7 +65,7 @@
        - Dans le répertoire tasks : un main.yaml qui peut appeler d'autres fichiers yaml
         
           ```yaml
-          include_task: "{{ ansible_facts['os_family'].yaml }}"
+          include_tasks: "{{ ansible_facts['os_family'].yaml }}"
           ```
 
 
