@@ -361,3 +361,5 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   ```bash
   $ ansible-galaxy init --init-path roles/ ansible_role_ssh
   ```
+
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html

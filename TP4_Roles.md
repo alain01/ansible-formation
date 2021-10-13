@@ -10,7 +10,7 @@
   vars:
     service: httpd
     package: httpd
-    admin: formtion@ansible.lan
+    admin: formation@ansible.lan
 
   tasks:
   - name: install apache
