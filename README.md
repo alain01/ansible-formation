@@ -81,7 +81,7 @@ $ ansible --version
   - Un module prend des options/arguments/paramètres => /!\ certain arguments sont requis, d'autres ont des valeurs par défaut
 
 
-## Configuration environnement ansible 
+## Configuration environnement ansible - ansible.cfg
 
 > ansible-config
 
