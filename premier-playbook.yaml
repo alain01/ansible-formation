@@ -1,6 +1,7 @@
 ---
 - name: PLAY de demo premier playbook
   hosts: all
+  #gather_facts: true
 
   tasks:
 

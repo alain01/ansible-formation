@@ -35,16 +35,16 @@
     "ansible_date_time": {
         "date": "2021-10-14",
         "day": "14",
-        "epoch": "1634220669",
+        "epoch": "1634222358",
         "hour": "14",
-        "iso8601": "2021-10-14T14:11:09Z",
-        "iso8601_basic": "20211014T141109391663",
-        "iso8601_basic_short": "20211014T141109",
-        "iso8601_micro": "2021-10-14T14:11:09.391663Z",
-        "minute": "11",
+        "iso8601": "2021-10-14T14:39:18Z",
+        "iso8601_basic": "20211014T143918777369",
+        "iso8601_basic_short": "20211014T143918",
+        "iso8601_micro": "2021-10-14T14:39:18.777369Z",
+        "minute": "39",
         "month": "10",
-        "second": "09",
-        "time": "14:11:09",
+        "second": "18",
+        "time": "14:39:18",
         "tz": "UTC",
         "tz_dst": "UTC",
         "tz_offset": "+0000",
@@ -235,7 +235,7 @@
         "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         "PWD": "/home/ansible",
         "SHELL": "/bin/bash",
-        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-bqaagvdhwvxoifxaunvqbeyznzvmiqkr ; /usr/bin/python3 /home/ansible/.ansible/tmp/ansible-tmp-1634220668.791408-30748-83962664115940/AnsiballZ_setup.py",
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-oenjprgzgiujcihgockxhbbayvplmwua ; /usr/bin/python3 /home/ansible/.ansible/tmp/ansible-tmp-1634222358.3177006-35743-80242380472564/AnsiballZ_setup.py",
         "SUDO_GID": "2000",
         "SUDO_UID": "2000",
         "SUDO_USER": "ansible",
@@ -413,11 +413,11 @@
     "ansible_hostname": "srv01",
     "ansible_hostnqn": "",
     "ansible_interfaces": [
+        "docker0",
         "eth1",
-        "eth0",
         "veth48b18cc",
         "lo",
-        "docker0"
+        "eth0"
     ],
     "ansible_is_chroot": false,
     "ansible_iscsi_iqn": "",
@@ -511,16 +511,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "dfe40cd376874d47be4909a9ddb2b881",
-    "ansible_memfree_mb": 156,
+    "ansible_memfree_mb": 153,
     "ansible_memory_mb": {
         "nocache": {
-            "free": 739,
-            "used": 248
+            "free": 738,
+            "used": 249
         },
         "real": {
-            "free": 156,
+            "free": 153,
             "total": 987,
-            "used": 831
+            "used": 834
         },
         "swap": {
             "cached": 0,
@@ -532,10 +532,10 @@
     "ansible_memtotal_mb": 987,
     "ansible_mounts": [
         {
-            "block_available": 4272033,
+            "block_available": 4271989,
             "block_size": 4096,
             "block_total": 5127572,
-            "block_used": 855539,
+            "block_used": 855583,
             "device": "/dev/sda1",
             "fstype": "ext4",
             "inode_available": 1259449,
@@ -543,7 +543,7 @@
             "inode_used": 51271,
             "mount": "/",
             "options": "rw,relatime,discard,errors=remount-ro",
-            "size_available": 17498247168,
+            "size_available": 17498066944,
             "size_total": 21002534912,
             "uuid": "67aff8cb-5daf-40f8-9d21-88127f0d52b6"
         }
@@ -653,7 +653,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "innotek GmbH",
-    "ansible_uptime_seconds": 27275,
+    "ansible_uptime_seconds": 28964,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,

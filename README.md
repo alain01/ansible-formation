@@ -227,6 +227,8 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 
   > https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
 
+  > hostvars[] et groups[] => interroger des variables pour un node précis ou lister le contenu d'un groupe de l'inventaire
+
 - Facts : variables/nodes récoltées automatiquement lors du déclenchement de la task module setup
 
   > https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html#ansible-facts

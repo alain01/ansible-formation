@@ -115,16 +115,16 @@
     "ansible_date_time": {
         "date": "2021-10-14",
         "day": "14",
-        "epoch": "1634220669",
+        "epoch": "1634222007",
         "hour": "14",
-        "iso8601": "2021-10-14T14:11:09Z",
-        "iso8601_basic": "20211014T141109576681",
-        "iso8601_basic_short": "20211014T141109",
-        "iso8601_micro": "2021-10-14T14:11:09.576681Z",
-        "minute": "11",
+        "iso8601": "2021-10-14T14:33:27Z",
+        "iso8601_basic": "20211014T143327396024",
+        "iso8601_basic_short": "20211014T143327",
+        "iso8601_micro": "2021-10-14T14:33:27.396024Z",
+        "minute": "33",
         "month": "10",
-        "second": "09",
-        "time": "14:11:09",
+        "second": "27",
+        "time": "14:33:27",
         "tz": "UTC",
         "tz_dst": "UTC",
         "tz_offset": "+0000",
@@ -705,7 +705,7 @@
         "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin",
         "PWD": "/vagrant",
         "SHELL": "/bin/bash",
-        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-boqdqpzozyyemhognuevbhxacvzpsnvc ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1634220668.7364898-30746-151416990777713/AnsiballZ_setup.py",
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-euodilbmaunypqhqphqxbbpnkxfobbge ; /usr/bin/python3 /home/vagrant/.ansible/tmp/ansible-tmp-1634222005.899727-35192-167201796379317/AnsiballZ_setup.py",
         "SUDO_GID": "1000",
         "SUDO_UID": "1000",
         "SUDO_USER": "vagrant",
@@ -719,11 +719,11 @@
     "ansible_hostname": "master",
     "ansible_hostnqn": "",
     "ansible_interfaces": [
-        "enp0s8",
-        "br-a6f282370c97",
         "enp0s3",
+        "lo",
         "docker0",
-        "lo"
+        "enp0s8",
+        "br-a6f282370c97"
     ],
     "ansible_is_chroot": false,
     "ansible_iscsi_iqn": "",
@@ -831,8 +831,8 @@
     "ansible_memfree_mb": 71,
     "ansible_memory_mb": {
         "nocache": {
-            "free": 645,
-            "used": 336
+            "free": 647,
+            "used": 334
         },
         "real": {
             "free": 71,
@@ -849,10 +849,10 @@
     "ansible_memtotal_mb": 981,
     "ansible_mounts": [
         {
-            "block_available": 9098051,
+            "block_available": 9097998,
             "block_size": 4096,
             "block_total": 10148403,
-            "block_used": 1050352,
+            "block_used": 1050405,
             "device": "/dev/sda1",
             "fstype": "ext4",
             "inode_available": 4940094,
@@ -860,7 +860,7 @@
             "inode_used": 179906,
             "mount": "/",
             "options": "rw,relatime",
-            "size_available": 37265616896,
+            "size_available": 37265399808,
             "size_total": 41567858688,
             "uuid": "d583e3b0-1f96-448f-9071-4ef9542cb931"
         },
@@ -1044,7 +1044,7 @@
     "ansible_system_capabilities": [],
     "ansible_system_capabilities_enforced": "False",
     "ansible_system_vendor": "innotek GmbH",
-    "ansible_uptime_seconds": 27302,
+    "ansible_uptime_seconds": 28639,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,
@@ -1111,25 +1111,25 @@
     "facter_kernelrelease": "5.4.0-88-generic",
     "facter_kernelversion": "5.4.0",
     "facter_load_averages": {
-        "15m": 0.03,
-        "1m": 0.32,
-        "5m": 0.11
+        "15m": 0.05,
+        "1m": 0.35,
+        "5m": 0.15
     },
     "facter_memory": {
         "system": {
-            "available": "664.34 MiB",
-            "available_bytes": 696606720,
-            "capacity": "32.30%",
+            "available": "646.62 MiB",
+            "available_bytes": 678027264,
+            "capacity": "34.10%",
             "total": "981.25 MiB",
             "total_bytes": 1028911104,
-            "used": "316.91 MiB",
-            "used_bytes": 332304384
+            "used": "334.63 MiB",
+            "used_bytes": 350883840
         }
     },
     "facter_mountpoints": {
         "/": {
             "available": "34.72 GiB",
-            "available_bytes": 37282394112,
+            "available_bytes": 37282177024,
             "capacity": "10.31%",
             "device": "/dev/sda1",
             "filesystem": "ext4",
@@ -1140,7 +1140,7 @@
             "size": "38.71 GiB",
             "size_bytes": 41567858688,
             "used": "3.99 GiB",
-            "used_bytes": 4285464576
+            "used_bytes": 4285681664
         },
         "/dev/shm": {
             "available": "490.50 MiB",
@@ -1612,8 +1612,8 @@
     "facter_system_uptime": {
         "days": 0,
         "hours": 7,
-        "seconds": 27303,
-        "uptime": "7:35 hours"
+        "seconds": 28640,
+        "uptime": "7:57 hours"
     },
     "facter_timezone": "UTC",
     "facter_virtual": "virtualbox",

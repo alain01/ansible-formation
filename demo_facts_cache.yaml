@@ -1,0 +1,13 @@
+---
+- name: PLAY demo utilisation fact_cache et ressource externe
+  hosts: srv01
+
+  tasks:
+    - name: appel d'un facts
+      ansible.builtin.debug:
+        # Acces aux facts en cache de srv01 -> hosts: srv01
+        #var: ansible_facts['devices']
+        # Acces aux facts en cache d'un node de l'inventaire
+        #var: hostvars['srv02']['ansible_facts']['os_family']
+        # Acces au contenu d'un groupe de l'inventaire
+        var: groups['docker']
