@@ -655,3 +655,49 @@ The offending line appears to be:
 2021-10-14 15:05:15,857 p=37570 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
 2021-10-14 15:05:15,857 p=37570 u=vagrant n=ansible | srv01                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-10-14 15:05:15,858 p=37570 u=vagrant n=ansible | srv02                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 19:08:24,261 p=2769 u=vagrant n=ansible | srv03 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname srv03: Temporary failure in name resolution",
+    "unreachable": true
+}
+2021-10-14 19:08:24,283 p=2769 u=vagrant n=ansible | srv04 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname srv04: Temporary failure in name resolution",
+    "unreachable": true
+}
+2021-10-14 19:08:24,664 p=2769 u=vagrant n=ansible | master | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-10-14 19:08:24,702 p=2769 u=vagrant n=ansible | srv01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2021-10-14 19:08:25,283 p=2769 u=vagrant n=ansible | srv02 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/libexec/platform-python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-10-14 19:08:42,660 p=2886 u=vagrant n=ansible | srv01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2021-10-14 19:08:42,695 p=2886 u=vagrant n=ansible | master | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2021-10-14 19:08:42,883 p=2886 u=vagrant n=ansible | srv02 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/libexec/platform-python"
+    },
+    "changed": false,
+    "ping": "pong"
+}

@@ -7,8 +7,6 @@ redhat
 
 [docker]
 srv01
-srv03
-srv04
 
 
 [debian]
