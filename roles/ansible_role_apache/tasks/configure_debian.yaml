@@ -3,5 +3,6 @@
     path: /etc/apache2/sites-available/000-default.conf
     regexp: 'ServerAdmin'
     line: "ServerAdmin {{ admin }}"
+    #validate: 'apachectl -t -f %s'
   notify:
     - restart apache

@@ -7,10 +7,10 @@ redhat
 
 
 [debian]
-srv01  ansible_ssh_host=172.28.128.112 my_var=psa
+srv01  ansible_ssh_host=172.28.128.114 my_var=psa
 
 [redhat]
-srv02  ansible_ssh_host=172.28.128.113 environnement=INT
+srv02  ansible_ssh_host=172.28.128.115 environnement=INT
 
 
 [common:vars]

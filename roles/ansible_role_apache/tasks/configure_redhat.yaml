@@ -3,5 +3,6 @@
     path: /etc/httpd/conf/httpd.conf
     regexp: '^ServerAdmin'
     line: "ServerAdmin {{ admin }}"
+    validate: httpd -t -f %s
   notify:
     - restart apache

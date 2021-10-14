@@ -1,2 +1,6 @@
 .vagrant
 .vault_secret
+roles/*
+!roles/requirements.yml
+docker
+deploy-docker.yaml
