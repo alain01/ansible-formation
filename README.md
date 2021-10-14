@@ -363,3 +363,16 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   ```
 
 > https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
+
+
+- Utilisation de roles communautaires
+
+  - Les rôles ont leur propre cycle de vie, independants du cycle de vie du projet ansible (des repos git différents)
+  - On liste les rôles nécessaire à notre projet dans un fichier requirements.yml
+  - On télécharge les rôles avec la commande : ```$ ansible-galaxy role install -r requirements.yml```
+
+    ```bash
+    $ ansible-galaxy role install -r roles/requirements.yml -p roles/
+    ```
+
+    > https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-multiple-roles-from-a-file
