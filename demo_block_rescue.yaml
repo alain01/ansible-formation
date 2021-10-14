@@ -1,6 +1,7 @@
 ---
 - name: PLAY de demo utilisation block
   hosts: common
+  # Desactivation de la recolte des facts car si pas de python
   gather_facts: false
 
   tasks:
@@ -12,7 +13,11 @@
         - name: "test de presence python3"
           ansible.builtin.shell:
             cmd: '(test -f /usr/bin/python3) || (test -f /bin/python3)'
+          register: output_python
       rescue:
+        - name: debug output_python
+          ansible.builtin.debug:
+            var: output_python
         - name: RESCUE - Utilisation du module raw pour tentative d'install python3 en commande SSH
           ansible.builtin.raw: '(apt-get update && apt-get install -yq python3) || (dnf install -y python3)'
       become: true
