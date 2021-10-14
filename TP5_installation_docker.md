@@ -34,3 +34,6 @@ $ ansible -m shell -a "docker version" docker -b
 
 - Avec des modules fournis par ansible, déployer un conteneur sur la machine distante
   - Ajouter dans le playbook, une task qui cree un conteneur
+
+     - nom de conteneur
+     - image : nginx:1.21-alpine
