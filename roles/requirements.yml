@@ -1,0 +1,9 @@
+---
+
+### Roles
+## Internes - entreprise
+roles:
+  - src: https://github.com/psable/formation-ansible-role-docker.git
+    scm: git
+    version: v1.0.0
+    name: ansible-role-docker__1.0.0
