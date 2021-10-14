@@ -1,0 +1,17 @@
+---
+- name: PLAY de demo utilisation block
+  hosts: common
+
+  tasks:
+
+    - name: Mode block - gestion prerequis python3
+      block:
+        - name: "Vérification de la connexion et prerequis python avec module ping"
+          ansible.builtin.ping:
+        - name: "test de presence python3"
+          ansible.builtin.shell:
+            cmd: '(test -f /usr/bin/python3) || (test -f /bin/python3)'
+      rescue:
+        - name: RESCUE - Utilisation du module raw pour tentative d'install python3 en commande SSH
+          ansible.builtin.raw: '(apt-get update && apt-get install -yq python3) || (dnf install -y python3)'
+      become: true

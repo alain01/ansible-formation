@@ -316,6 +316,16 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 
   > https://docs.ansible.com/ansible/latest/user_guide/playbooks_handlers.html
 
+
+## Block
+
+- Regroupement logique de task, permet d'y associer des condition et variables (simplifie, reduit le code)
+- Implementation de rescue et always
+
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html
+
+> CF demo_block_rescue.yaml
+
 ## Template Jinja
 
 - Gérer des fichiers dynamiques (avec variables)

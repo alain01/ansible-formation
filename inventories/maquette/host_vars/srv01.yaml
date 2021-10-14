@@ -1,1 +1,4 @@
 ansible_python_interpreter: /usr/bin/python3
+
+# Variable du role ansible-role-docker
+docker_compose_version: '1.29.2'
