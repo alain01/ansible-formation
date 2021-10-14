@@ -1,0 +1,35 @@
+- name: PLAY docker
+  hosts: docker
+  become: True
+
+  roles:
+    - ansible-role-docker__1.0.0
+
+  tasks:
+    # Package necessaire pour pouvoir installer des librairie python
+    - name: installation python3-pip
+      ansible.builtin.package:
+        name: python3-pip
+        state: latest
+
+    # pip : gestionnaire librairies python
+    - name: installation librairie python docker
+      ansible.builtin.pip:
+        name: docker
+
+    - name: "test module docker container"
+      community.docker.docker_container:
+        name: mynginx
+        image: nginx:1.21-alpine
+        ports:
+        # Publish container port 80 as host port 8080
+          - "8080:80"
+
+    - name: Check that you can connect (GET) to a page and it returns a status 200
+      ansible.builtin.uri:
+        url: http://localhost:8080
+      register: uri_output
+
+    - name: Analyse output uri
+      ansible.builtin.debug:
+        msg: "{{ uri_output }}"

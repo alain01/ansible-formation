@@ -3,4 +3,3 @@
 roles/*
 !roles/requirements.yml
 docker
-deploy-docker.yaml
