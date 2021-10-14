@@ -241,6 +241,19 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   - Adapter le code a des contextes différents simplement en redéclarant une variable à l'endroit désiré
 
 
+- Facts
+
+  - données recoltées sur chaque machine via le module ansible.builtin.setup
+  - Dans un playbook, une task "gather facts" est déclenchée automatiquement
+  - On peut désactiver la task auto : 
+      ```yaml
+      gather_facts: false
+      ```
+  - On peut utiliser une mécanique de cache pour les facts
+
+     > https://docs.ansible.com/ansible/latest/plugins/cache.html
+
+
 ## Boucles - loop - with_item
 
 - Itération sur des structures de données type liste et dictionnaire.
@@ -386,3 +399,5 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
     ```
 
     > https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-multiple-roles-from-a-file
+
+

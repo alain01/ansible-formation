@@ -5,7 +5,6 @@
   gather_facts: false
 
   tasks:
-
     - name: Mode block - gestion prerequis python3
       block:
         - name: "Vérification de la connexion et prerequis python avec module ping"
@@ -20,4 +19,7 @@
             var: output_python
         - name: RESCUE - Utilisation du module raw pour tentative d'install python3 en commande SSH
           ansible.builtin.raw: '(apt-get update && apt-get install -yq python3) || (dnf install -y python3)'
+      always:
+        - name: collecte des facts puisqu'on a essayé d'installer python
+          ansible.builtin.setup:
       become: true
