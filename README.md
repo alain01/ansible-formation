@@ -403,3 +403,7 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
     > https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#installing-multiple-roles-from-a-file
 
 
+## Optimisation du déroulement
+
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_async.html
+> https://docs.ansible.com/ansible/latest/user_guide/playbooks_strategies.html
