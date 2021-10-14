@@ -471,3 +471,187 @@
 }
 2021-10-14 14:39:19,347 p=35738 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
 2021-10-14 14:39:19,347 p=35738 u=vagrant n=ansible | srv01                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:50:59,882 p=36326 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 14:50:59,900 p=36326 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 14:51:01,255 p=36326 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:51:01,520 p=36326 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:51:01,534 p=36326 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 14:51:02,035 p=36326 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 14:51:02,159 p=36326 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 14:51:02,180 p=36326 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:51:02,181 p=36326 u=vagrant n=ansible | srv01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:51:02,182 p=36326 u=vagrant n=ansible | srv02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:51:17,274 p=36388 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 14:51:17,288 p=36388 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 14:51:18,374 p=36388 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:51:18,543 p=36388 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:51:18,561 p=36388 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 14:51:49,097 p=36388 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 14:51:49,186 p=36388 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 14:51:49,201 p=36388 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:51:49,201 p=36388 u=vagrant n=ansible | srv01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:51:49,202 p=36388 u=vagrant n=ansible | srv02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:52:01,753 p=36470 u=vagrant n=ansible | ERROR! couldn't resolve module/action 'ansible.builting.debug'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/vagrant/demo_async_parallele.yaml': line 11, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: "Creation d'un entree DNS"
+      ^ here
+
+2021-10-14 14:52:37,692 p=36502 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 14:52:37,708 p=36502 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 14:52:39,039 p=36502 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:52:39,232 p=36502 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:52:39,249 p=36502 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 14:53:09,866 p=36502 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 14:53:09,998 p=36502 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 14:53:10,005 p=36502 u=vagrant n=ansible | TASK [Creation d'un entree DNS] *************************************************************************************************
+2021-10-14 14:53:10,047 p=36502 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 14:53:10,055 p=36502 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 14:53:10,076 p=36502 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:53:10,077 p=36502 u=vagrant n=ansible | srv01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:53:10,078 p=36502 u=vagrant n=ansible | srv02                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:56:53,277 p=36755 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 14:56:53,293 p=36755 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 14:56:54,607 p=36755 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:56:55,078 p=36755 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:56:55,092 p=36755 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 14:57:07,291 p=36755 u=vagrant n=ansible | fatal: [srv01]: FAILED! => {"changed": false, "msg": "async task did not complete within the requested time - 10s"}
+2021-10-14 14:57:07,728 p=36755 u=vagrant n=ansible | fatal: [srv02]: FAILED! => {"changed": false, "msg": "async task did not complete within the requested time - 10s"}
+2021-10-14 14:57:07,731 p=36755 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:57:07,731 p=36755 u=vagrant n=ansible | srv01                      : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:57:07,732 p=36755 u=vagrant n=ansible | srv02                      : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:59:31,645 p=36981 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 14:59:31,660 p=36981 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 14:59:32,941 p=36981 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:59:33,405 p=36981 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:59:33,422 p=36981 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 14:59:40,021 p=36981 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 14:59:40,742 p=36981 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 14:59:40,751 p=36981 u=vagrant n=ansible | TASK [Creation d'un entree DNS] *************************************************************************************************
+2021-10-14 14:59:40,795 p=36981 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 14:59:40,803 p=36981 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 14:59:40,816 p=36981 u=vagrant n=ansible | TASK [Creation regle router] ****************************************************************************************************
+2021-10-14 14:59:40,856 p=36981 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 14:59:40,867 p=36981 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 14:59:40,885 p=36981 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:59:40,887 p=36981 u=vagrant n=ansible | srv01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:59:40,887 p=36981 u=vagrant n=ansible | srv02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:00:07,903 p=37119 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 15:00:07,917 p=37119 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 15:00:09,038 p=37119 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 15:00:09,197 p=37119 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 15:00:09,214 p=37119 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 15:00:09,985 p=37119 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 15:00:10,131 p=37119 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 15:00:10,145 p=37119 u=vagrant n=ansible | TASK [Creation d'un entree DNS] *************************************************************************************************
+2021-10-14 15:00:10,186 p=37119 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:00:10,200 p=37119 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:00:10,208 p=37119 u=vagrant n=ansible | TASK [Creation regle router] ****************************************************************************************************
+2021-10-14 15:00:10,252 p=37119 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:00:10,264 p=37119 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:00:10,281 p=37119 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 15:00:10,282 p=37119 u=vagrant n=ansible | srv01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:00:10,283 p=37119 u=vagrant n=ansible | srv02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:01:34,861 p=37246 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 15:01:34,878 p=37246 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 15:01:36,146 p=37246 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 15:01:36,493 p=37246 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 15:01:36,510 p=37246 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 15:01:37,364 p=37246 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 15:01:37,511 p=37246 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 15:01:37,525 p=37246 u=vagrant n=ansible | TASK [Creation d'un entree DNS] *************************************************************************************************
+2021-10-14 15:01:37,576 p=37246 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:01:37,586 p=37246 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:01:37,595 p=37246 u=vagrant n=ansible | TASK [Creation regle router] ****************************************************************************************************
+2021-10-14 15:01:37,641 p=37246 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:01:37,650 p=37246 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:01:37,668 p=37246 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 15:01:37,669 p=37246 u=vagrant n=ansible | srv01                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:01:37,670 p=37246 u=vagrant n=ansible | srv02                      : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:03:37,316 p=37404 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 15:03:37,328 p=37404 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 15:03:38,634 p=37404 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 15:03:39,074 p=37404 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 15:03:39,092 p=37404 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 15:03:39,878 p=37404 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 15:03:40,013 p=37404 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 15:03:40,022 p=37404 u=vagrant n=ansible | TASK [Creation d'un entree DNS] *************************************************************************************************
+2021-10-14 15:03:40,063 p=37404 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:03:40,078 p=37404 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:03:40,088 p=37404 u=vagrant n=ansible | TASK [Creation regle router] ****************************************************************************************************
+2021-10-14 15:03:40,124 p=37404 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:03:40,140 p=37404 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:03:40,152 p=37404 u=vagrant n=ansible | TASK [Check on an async task] ***************************************************************************************************
+2021-10-14 15:04:01,250 p=37404 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 15:04:01,731 p=37404 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 15:04:01,748 p=37404 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 15:04:01,749 p=37404 u=vagrant n=ansible | srv01                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:04:01,749 p=37404 u=vagrant n=ansible | srv02                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:04:52,044 p=37570 u=vagrant n=ansible | PLAY [PLAY demo task asynchrones] ***********************************************************************************************
+2021-10-14 15:04:52,057 p=37570 u=vagrant n=ansible | TASK [Gathering Facts] **********************************************************************************************************
+2021-10-14 15:04:53,152 p=37570 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 15:04:53,282 p=37570 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 15:04:53,297 p=37570 u=vagrant n=ansible | TASK [Provisionnement VM] *******************************************************************************************************
+2021-10-14 15:04:54,005 p=37570 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 15:04:54,178 p=37570 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 15:04:54,188 p=37570 u=vagrant n=ansible | TASK [Creation d'un entree DNS] *************************************************************************************************
+2021-10-14 15:04:54,237 p=37570 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:04:54,248 p=37570 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation entree DNS"
+}
+2021-10-14 15:04:54,258 p=37570 u=vagrant n=ansible | TASK [Creation regle router] ****************************************************************************************************
+2021-10-14 15:04:54,299 p=37570 u=vagrant n=ansible | ok: [srv01] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:04:54,315 p=37570 u=vagrant n=ansible | ok: [srv02] => {
+    "msg": "Creation regle router"
+}
+2021-10-14 15:04:54,325 p=37570 u=vagrant n=ansible | TASK [Check on an async task] ***************************************************************************************************
+2021-10-14 15:05:15,415 p=37570 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 15:05:15,836 p=37570 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 15:05:15,857 p=37570 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 15:05:15,857 p=37570 u=vagrant n=ansible | srv01                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 15:05:15,858 p=37570 u=vagrant n=ansible | srv02                      : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

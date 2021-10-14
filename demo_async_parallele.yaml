@@ -1,0 +1,29 @@
+---
+- name: PLAY demo task asynchrones
+  hosts: common
+
+
+  tasks:
+
+    - name: "Provisionnement VM"
+      ansible.builtin.shell: echo "Construction vm en cours .." && sleep 20
+      async: 45
+      poll: 0
+      register: shell_sleeper
+
+    - name: "Creation d'un entree DNS"
+      ansible.builtin.debug: 
+        msg: "Creation entree DNS"
+
+    - name: "Creation regle router"
+      ansible.builtin.debug: 
+        msg: "Creation regle router"
+
+
+    - name: Check on an async task
+      async_status:
+       jid: "{{ shell_sleeper.ansible_job_id }}"
+      register: job_result
+      until: job_result.finished
+      retries: 100
+      delay: 10
