@@ -1,6 +1,6 @@
 ---
 - name: PLAY de demo premier playbook
-  hosts: srv01
+  hosts: all
 
   tasks:
 
