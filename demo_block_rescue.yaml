@@ -1,6 +1,7 @@
 ---
 - name: PLAY de demo utilisation block
   hosts: common
+  gather_facts: false
 
   tasks:
 
