@@ -1,0 +1,26 @@
+2021-10-14 14:15:01,063 p=31361 u=vagrant n=ansible | PLAY [PLAY de demo premier playbook] ********************************************************************************************
+2021-10-14 14:15:01,111 p=31361 u=vagrant n=ansible | TASK [Utilisation du module user] ***********************************************************************************************
+2021-10-14 14:15:01,829 p=31361 u=vagrant n=ansible | ok: [master]
+2021-10-14 14:15:01,885 p=31361 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:15:02,522 p=31361 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:15:02,539 p=31361 u=vagrant n=ansible | TASK [Utilisation d'un second module] *******************************************************************************************
+2021-10-14 14:15:03,211 p=31361 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 14:15:03,217 p=31361 u=vagrant n=ansible | changed: [master]
+2021-10-14 14:15:03,359 p=31361 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 14:15:03,388 p=31361 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:15:03,389 p=31361 u=vagrant n=ansible | master                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:15:03,389 p=31361 u=vagrant n=ansible | srv01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:15:03,390 p=31361 u=vagrant n=ansible | srv02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:16:00,645 p=31518 u=vagrant n=ansible | PLAY [PLAY de demo premier playbook] ********************************************************************************************
+2021-10-14 14:16:00,689 p=31518 u=vagrant n=ansible | TASK [Utilisation du module user] ***********************************************************************************************
+2021-10-14 14:16:01,396 p=31518 u=vagrant n=ansible | ok: [master]
+2021-10-14 14:16:01,414 p=31518 u=vagrant n=ansible | ok: [srv01]
+2021-10-14 14:16:01,588 p=31518 u=vagrant n=ansible | ok: [srv02]
+2021-10-14 14:16:01,606 p=31518 u=vagrant n=ansible | TASK [Utilisation d'un second module] *******************************************************************************************
+2021-10-14 14:16:02,270 p=31518 u=vagrant n=ansible | changed: [srv01]
+2021-10-14 14:16:02,271 p=31518 u=vagrant n=ansible | changed: [master]
+2021-10-14 14:16:02,384 p=31518 u=vagrant n=ansible | changed: [srv02]
+2021-10-14 14:16:02,423 p=31518 u=vagrant n=ansible | PLAY RECAP **********************************************************************************************************************
+2021-10-14 14:16:02,424 p=31518 u=vagrant n=ansible | master                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:16:02,424 p=31518 u=vagrant n=ansible | srv01                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-14 14:16:02,425 p=31518 u=vagrant n=ansible | srv02                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
