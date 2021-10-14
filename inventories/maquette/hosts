@@ -5,6 +5,9 @@ master ansible_connection=local
 debian
 redhat
 
+[docker]
+srv01
+
 
 [debian]
 srv01  ansible_ssh_host=172.28.128.114 my_var=psa
