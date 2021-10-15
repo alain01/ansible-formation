@@ -1,0 +1,16 @@
+---
+- name: PLAY demo vault hashicorp
+  hosts: all
+
+  vars:
+    vault_token: vault-plaintext-root-token
+    vault_url: http://172.28.128.111:8200
+    vault_data: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=secret/data/infra'
+      ~ ' token=' ~ vault_token
+      ~ ' url='   ~ vault_url ) }}"
+
+
+  tasks:
+    - name: "test hashivault"
+      ansible.builtin.debug:
+        var: vault_data.formation_password

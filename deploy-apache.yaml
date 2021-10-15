@@ -1,6 +1,6 @@
 - name: PLAY deploy apache
   hosts: common
   become: true
-
+    
   roles:
     - ansible_role_apache

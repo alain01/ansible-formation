@@ -475,3 +475,27 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   - 2. Creation d'un projet (synchroniser le depot git)
   - 3. Synchro de l'inventaire (lire l'inventaire)
   - 4. Creation de templates/workflow (preparer le déclenchement des playbook)
+
+
+## Inventaire dynamique
+
+> https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html
+> https://github.com/ansible-collections/community.general/tree/main/plugins/inventory
+
+- Ex vsphere :
+
+  >  https://docs.ansible.com/ansible/latest/scenario_guides/vmware_scenarios/vmware_inventory.html
+
+- Methode script
+
+    > https://docs.ansible.com/ansible/latest/dev_guide/developing_inventory.html#developing-inventory-scripts
+
+    - script d'interrogation CMDB/provider
+    - Générer une output format JSON qui sera interpretée par ansible
+    - https://github.com/irongomme/ansible_ovh_public_cloud/blob/master/ovh_public_cloud.py
+
+- Essayer de trouver des exemples de scripts (cloud, vmware)
+
+- De plus en plus de plugin via les collection ansible
+
+  > https://docs.ansible.com/ansible/latest/collections/community/general/proxmox_inventory.html

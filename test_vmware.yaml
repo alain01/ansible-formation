@@ -1,0 +1,45 @@
+---
+- name: DEMO vmware
+  hosts: local
+
+  vars:
+    vault_token: vault-plaintext-root-token
+    vault_url: http://172.28.128.111:8200
+    vault_data: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=secret/data/infra'
+      ~ ' token=' ~ vault_token
+      ~ ' url='   ~ vault_url ) }}"
+
+    liste_vm:
+      - vm_001
+      - vm_002
+      - vm_003
+      - vm_004
+
+  tasks:
+
+    - name: Create a virtual machine on given ESXi hostname
+      community.vmware.vmware_guest:
+        hostname: "192.168.244.38"
+        username: "root"
+        password: "{{ vault_data.esxi_password }}"
+        folder: /
+        name: "{{ item }}"
+        state: poweredoff
+        guest_id: centos64Guest
+        disk:
+          - size_gb: 10
+            type: thin
+            datastore: datastore1
+        hardware:
+          memory_mb: 512
+          num_cpus: 4
+          scsi: paravirtual
+        networks:
+          - name: VM Network
+            mac: aa:bb:dd:aa:00:14
+            ip: 10.10.10.100
+            netmask: 255.255.255.0
+            device_type: vmxnet3
+        validate_certs: no
+      register: deploy_vm
+      loop: "{{ liste_vm }}"

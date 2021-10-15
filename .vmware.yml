@@ -1,0 +1,10 @@
+plugin: vmware_vm_inventory
+strict: False
+hostname: 192.168.244.38
+username: "administrator@vsphere.local"
+password: F0rm@tion!
+validate_certs: False
+with_tags: True
+keyed_groups:
+        - key: 'tags'
+          separator: ''
