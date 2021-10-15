@@ -1,1 +1,4 @@
 my_var: "surcharge despuis fichier srv02.yaml dans host_vars"
+
+mariadb_databases:
+  - name: formation
