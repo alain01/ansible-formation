@@ -452,3 +452,26 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
   - CF répertoire library et demo_mymodule.yaml
 
   - https://docs.ansible.com/ansible/latest/dev_guide/developing_modules.html#developing-modules
+
+
+
+## AWX - TOWER
+
+- Ansible GUI
+
+- S'installe sur un environnement dédié, n'impact pas le fonctionnement ansible cli. 
+
+- Se base sur les dépôts git
+
+- Peut être utilisé en parallele de ansible cli
+
+- Permet de déleguer des taches, visualiser, creer des workflow, sheduler
+
+> https://github.com/ansible/awx/blob/devel/INSTALL.md
+
+> https://github.com/ansible/awx-operator
+
+  - 1. Création des crédentials (source control git, ssh)
+  - 2. Creation d'un projet (synchroniser le depot git)
+  - 3. Synchro de l'inventaire (lire l'inventaire)
+  - 4. Creation de templates/workflow (preparer le déclenchement des playbook)
