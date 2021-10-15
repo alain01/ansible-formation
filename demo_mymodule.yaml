@@ -1,0 +1,13 @@
+---
+- name: PLAY demo utilisation module perso
+  hosts: local
+
+  tasks:
+
+    - name: Appel de mon module perso
+      mymodule:
+      register: output_mymodule
+
+    - name: debug mymodule
+      ansible.builtin.debug:
+        var: output_mymodule
