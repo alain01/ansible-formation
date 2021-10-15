@@ -27,7 +27,7 @@ $ vagrant ssh master.formation.lan
   - http://people.redhat.com/mlessard/mtl/presentations/apr2018/AnsibleF5WorkshopVF.pdf
   - https://ansible.github.io/workshops/decks/ansible_best_practices.pdf
 
-
+---
 
 ## Installations
 
@@ -81,6 +81,7 @@ $ ansible --version
      $ deactivate
      ```
 
+---
 
 ## Concepts et notion de base ansible 
 
@@ -441,3 +442,6 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 
 > https://docs.ansible.com/ansible/latest/user_guide/playbooks_async.html
 > https://docs.ansible.com/ansible/latest/user_guide/playbooks_strategies.html
+
+- delegate_to : controller où est déclenché une tasks 
+  > https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html

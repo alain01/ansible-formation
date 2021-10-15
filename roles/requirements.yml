@@ -2,6 +2,7 @@
 ## Collections
 collections:
   - name: community.docker
+  - name: community.general
 
 ### Roles
 ## Internes - entreprise
@@ -9,4 +10,12 @@ roles:
   - src: https://github.com/psable/formation-ansible-role-docker.git
     scm: git
     version: v1.0.0
-    name: ansible-role-docker__1.0.0
+    name: ansible-role-docker__.0.0
+
+
+## Externe - github
+  
+  - src: https://github.com/bertvv/ansible-role-mariadb
+    scm: git
+    version: v3.1.2
+    name: ansible-role-mariadb__3.1.2

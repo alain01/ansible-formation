@@ -1,0 +1,40 @@
+- name: PLAY creation groupe inventaire
+  hosts: local
+  become: true
+
+  tasks:
+  
+    - name: Utilisation magic var pour trouver le fichier d'inventaire
+      ansible.builtin.debug:
+        msg: "{{ inventory_file }}"
+
+    - name: Utilisation module ini_file pour modifier le foichier d'inventaire
+      community.general.ini_file:
+        path: "{{ inventory_file }}"
+        section: database
+        state: present
+        option: srv02
+        allow_no_value: True
+
+- name: PLAY - deploiement database
+  hosts: database
+
+  pre_tasks:
+    - name: pre_task pour realiser avant le role
+      ansible.builtin.debug:
+        msg: "Declenchement install mariadb"
+
+  roles:
+    - ansible-role-mariadb__3.1.2
+
+  tasks:
+
+    - name: Validation de la socket TCP mysql avec delegate
+      ansible.builtin.shell: nc -zv 172.28.128.115 3306
+      # delegation de la task : sera reellement exécutee sur le ansible controller
+      delegate_to: localhost
+      register: output_mysql
+
+    - name: affichage output test mysql
+      ansible.builtin.debug:
+        msg: "{{ output_mysql }}"

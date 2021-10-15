@@ -1,5 +1,5 @@
 [local]
-master ansible_connection=local
+master ansible_connection=local 
 
 [common:children]
 debian
@@ -22,3 +22,5 @@ my_var=foo
 
 [all:vars]
 my_var=bar
+[database]
+srv02
