@@ -5,11 +5,30 @@
 
 from ansible.module_utils.basic import *
 
+# Utilisation des parametres et ajout de contition pour warning ou fail
+def presentation(module):
+    name = module.params['name']
+    if name != "Pierre":
+        #module.warn("WARNING : vous n'êtes pas Pierre")
+        module.fail_json("FAILED: vous n'êtes pas Pierre ")
+    type = module.params['type']
+    return {"MYMODULE" : "Mon nom est : {} et mon type est : {}".format(name, type)}
+
 def main():
 
-    module = AnsibleModule(argument_spec={})
-    response = {"result" : "hello world"}
-    module.exit_json(changed=False, meta=response)
+    # Declaration des parametre du module
+    parametres = {
+      "name": {"required": True, "type": "str"},
+      "type": {
+          "default": "plouf",
+          "choice": ['plouf', "plaf"],
+          "type": 'str'
+      }
+    }
+
+    # Interpretation des parametres
+    module = AnsibleModule(argument_spec=parametres)
+    module.exit_json(changed=False, meta=presentation(module))
 
 if __name__ == '__main__':
     main()

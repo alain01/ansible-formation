@@ -6,6 +6,8 @@
 
     - name: Appel de mon module perso
       mymodule:
+        name: "Robert"
+        type: "plaf"
       register: output_mymodule
 
     - name: debug mymodule
