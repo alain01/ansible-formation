@@ -445,3 +445,10 @@ $ ansible-playbook -i hosts --become premier-playbook.yaml
 
 - delegate_to : controller où est déclenché une tasks 
   > https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
+
+
+## Conception de modules
+
+  - CF répertoire library et demo_mymodule.yaml
+
+  - https://docs.ansible.com/ansible/latest/dev_guide/developing_modules.html#developing-modules
