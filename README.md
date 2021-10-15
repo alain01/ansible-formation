@@ -48,6 +48,40 @@ $ . ~/.profile
 $ ansible --version
 ```
 
+- Methode via un virtualenv python
+
+   - 1. Mecanique python : creer un virtualenv
+
+       ```bash
+       $  sudo apt install python3-virtualenv
+       ```
+    
+   - 2. A ma demande : activer le virtualenv
+
+       ```bash
+       $ source ~/venv_ansible_2.9.10/bin/activate
+       ```
+
+   - 3. Dans ce virtual actif on install des packages PIP : ansible
+
+      ```bash
+      $ pip3 install ansible==2.9.10
+      $ source ~/venv_ansible_2.9.10/bin/activate
+      ```
+  
+  - 4. Test du binaire
+      
+      ```bash
+      $ ansible --version
+      ```
+
+  - 5. Sortir du virtualenv
+
+     ```bash
+     $ deactivate
+     ```
+
+
 ## Concepts et notion de base ansible 
 
 * Control/manager/management node :
